@@ -13,7 +13,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
      <ul class="nav navbar-nav navbar-right">
-       <% if user_signed_in? %>   
+       <% if admin_signed_in? %>
+       <li>Admin<%= link_to " #{current_admin.username}", current_user, class: "active" %></li>
+       <li><%= link_to "Sign Out", destroy_admin_session_path, method: :delete, class: "active" %></li>
+       <% elsif user_signed_in? %>   
          <li><%= link_to "#{current_user.username}", current_user, class: "active" %></li>
          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "active" %></li>
        <% else %>

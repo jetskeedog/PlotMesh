@@ -3,6 +3,13 @@ FactoryGirl.define do
     username "jetskee"
     password  "nooneknows"
     email { "#{username}@test.com" }
-#    admin false
   end
-end 
+end
+FactoryGirl.define do
+  factory :admin do
+    username "theadmin"
+    password  "nooneknows"
+    email { "#{username}@test.com" }
+  end
+end
+
