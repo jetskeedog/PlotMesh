@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PlotMesh</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+ <div class="container-fluid">
+      <div class="row clearfix">
+        <div class="col-md-12 column">
+      <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert alert-info") %>
+      <% end %> 
+          <%= render 'layouts/nav' %>
+
+      <%= yield %>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
