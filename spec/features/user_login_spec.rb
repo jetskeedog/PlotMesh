@@ -12,10 +12,11 @@ describe "signs up" do
     fill_in "Email",    with: "test@test.com"
     fill_in "Password", with: "nooneknows"
     fill_in "Password confirmation", with: "nooneknows"
+    attach_file "Profilepic", 'spec/frankenstien.jpg'
     save_and_open_page
     click_button "Sign up"
       
-    expect(page).to have_content("Users#show")  
+    expect(page).to have_content("Welcome! You have signed up successfully.")  
   end
 end
 

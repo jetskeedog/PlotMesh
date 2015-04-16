@@ -1,7 +1,7 @@
 <%= form_for(@movie) do |f| %>
 <% if @movie.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this beer from being saved:</h2>
+      <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
 
       <ul>
         <% @movie.errors.full_messages.each do |message| %>
@@ -27,7 +27,10 @@
      
      <%= f.label :synopsis %><br>
      <%= f.text_area :synopsis, class: 'form-control' %>
-
+     
+     <%= f.label :movie_poster %><br />
+     <%= f.file_field :movie_poster, class: 'form-control' %>
+     
      <%= f.submit "Add Movie", class: "btn btn-primary" %>
 
 <% end %>

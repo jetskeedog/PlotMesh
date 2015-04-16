@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :users
   resources :movies
  
-  root "users#show"
+  root "movies#index"
 end

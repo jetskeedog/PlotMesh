@@ -17,7 +17,7 @@ require 'factory_girl_rails'
       fill_in "Rated",    with: "R"
       fill_in "Duration", with: "88 Min"
       fill_in "Synopsis", with: "Somethings happen"
-
+      attach_file 'Movie poster', "spec/thedoll.jpg"
 
       click_button "Add Movie"
       
