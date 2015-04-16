@@ -3,13 +3,7 @@ require 'factory_girl_rails'
 
   describe "Create a movie" do
     it "with admin only" do
-      visit '/admins/sign_in'
-      admin = create(:admin)
-      fill_in "Username", with: admin.username
-      fill_in "Password", with: admin.password
-        
-      click_button "Log in"
-
+      sign_in_admin 'username', 'password'
       visit '/movies/new'
       
       fill_in "Title",    with: "Dolls"
@@ -17,7 +11,7 @@ require 'factory_girl_rails'
       fill_in "Rated",    with: "R"
       fill_in "Duration", with: "88 Min"
       fill_in "Synopsis", with: "Somethings happen"
-      attach_file 'Movie poster', "spec/thedoll.jpg"
+      attach_file 'Movie poster', "spec/images/thedoll.jpg"
 
       click_button "Add Movie"
       
@@ -27,13 +21,7 @@ require 'factory_girl_rails'
 
   describe "A user creates a movie" do
     it "Only admins can do that" do
-      visit '/users/sign_in'
-      user = create(:user)
-      fill_in "Username", with: user.username
-      fill_in "Password", with: user.password
-        
-      click_button "Log in"
-      
+      sign_in_user 'username', 'password'
       visit '/movies/new'
  
       expect(page).to have_content("You need to sign in or sign up before continuing.")  #this alert needs to be changed to say admins only

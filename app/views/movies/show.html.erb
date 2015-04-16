@@ -20,3 +20,9 @@
   <strong>Synopsis:</strong>
   <%= @movie.synopsis %>
 </p>
+
+<% @genres.each do |genre| %>
+<p><%= link_to genre.title, movie_genre_path(@movie, genre) %></p>
+<%= genre.description %>
+<% end %>
+<%= link_to "Add Genre", new_movie_genre_path(@movie) %>

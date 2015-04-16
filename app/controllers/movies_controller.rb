@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
   end
   
   def show
- 
+    @genres = Genre.where(movie_id: @movie.id)
   end
   
   def new
