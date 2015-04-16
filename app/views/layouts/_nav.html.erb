@@ -15,6 +15,7 @@
      <ul class="nav navbar-nav navbar-right">
        <% if admin_signed_in? %>
        <li>Admin<%= link_to " #{current_admin.username}", current_user, class: "active" %></li>
+       <li><%= link_to "New Movie", new_movie_path, class: "active" %></li>
        <li><%= link_to "Sign Out", destroy_admin_session_path, method: :delete, class: "active" %></li>
        <% elsif user_signed_in? %>   
          <li><%= link_to "#{current_user.username}", current_user, class: "active" %></li>

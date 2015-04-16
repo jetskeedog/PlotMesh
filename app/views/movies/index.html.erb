@@ -1,0 +1,12 @@
+<h1>Browse Movies</h1>
+ 
+<% @movies.each do |movie| %>
+  <div class="col-xs-2">
+    <div class='box panel panel-default'>
+      
+      <p><%= link_to movie.title, movie %></p>
+
+    </div>
+  </div>
+
+<% end %>
