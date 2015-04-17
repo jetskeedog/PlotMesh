@@ -15,6 +15,19 @@ module FeatureHelper
     fill_in "Password", with: admin.password
     click_button "Log in"
   end
+  
+  def create_genre(title, description)
+    sign_in_user 'username', 'password'
+    visit '/movies/2/genres/new'
+
+    fill_in "Title", with: "Horror"
+    fill_in "Description", with: "text"
+    
+    click_button "Create Genre"
+  end
+    
+    
+    
 
   
     RSpec.configure do |config|

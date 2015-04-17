@@ -22,7 +22,13 @@
 </p>
 
 <% @genres.each do |genre| %>
-<p><%= link_to genre.title, movie_genre_path(@movie, genre) %></p>
-<%= genre.description %>
+  <div class="col-md-2">
+    <div class='box panel panel-default'>
+      <%= pluralize genre.reputation_for(:votes).to_i, "vote" %>
+      <%= link_to "up", vote_movie_genre_path(@movie, genre,  type: "up"), method: "post" %>
+      <%= link_to genre.title, movie_genre_path(@movie, genre) %>
+      <%= link_to "down", vote_movie_genre_path(@movie, genre,  type: "down"), method: "post" %>
+    </div>
+  </div>
 <% end %>
-<%= link_to "Add Genre", new_movie_genre_path(@movie) %>
+<%= link_to "Add Genre", new_movie_genre_path(@movie) %>        

@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'paperclip', '~> 4.2.1'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'activerecord-reputation-system', '~> 3.0.1'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',                    group: :development
 

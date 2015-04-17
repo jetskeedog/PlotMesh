@@ -8,7 +8,13 @@ class GenresController < ApplicationController
   end
   
   def show
- 
+  end
+  
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @genre = Genre.find(params[:id])
+    @genre.add_or_update_evaluation(:votes, value, current_user)
+    redirect_to :back, notice: "Thanks for the vote"
   end
   
   def new
