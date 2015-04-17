@@ -14,3 +14,4 @@ Movie.create(title: "Se7en", year: "1995", rated: "R",  duration: "88 min", syno
 Movie.create(title: "American History X", year: "1998", rated: "R",  duration: "90 min", synopsis: "A former neo-nazi skinhead tries to prevent his younger brother from going down the same wrong path that he did.", admin_id: 1, movie_poster: File.open('spec/images/american.jpg') )
 Movie.create(title: "The Departed", year: "2006", rated: "R", duration: "80 min", synopsis: "An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.", admin_id: 1, movie_poster: File.open('spec/images/departed.jpg') )
 Genre.create(title: "Horror", description: "text here", user_id: 1, movie_id: 1)
+Genre.create(title: "Supernatural", description: "Ghosts and stuff", user_id: 1, movie_id: 1)

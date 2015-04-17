@@ -1,34 +1,42 @@
-<p><%= image_tag @movie.movie_poster.url(:medium) %></p>
-
-<strong>Title:</strong>
-<%= @movie.title %>
-</p>
-
-<p>
-  <strong>Year:</strong>
-  <%= @movie.year %>
-</p>
-<p>
-  <strong>Rated:</strong>
-  <%= @movie.rated %>
-</p>
-<p>
-  <strong>Duration:</strong>
-  <%= @movie.duration %>
-</p>
-<p>
-  <strong>Synopsis:</strong>
-  <%= @movie.synopsis %>
-</p>
-
-<% @genres.each do |genre| %>
-  <div class="col-md-2">
-    <div class='box panel panel-default'>
-      <%= pluralize genre.reputation_for(:votes).to_i, "vote" %>
-      <%= link_to "up", vote_movie_genre_path(@movie, genre,  type: "up"), method: "post" %>
-      <%= link_to genre.title, movie_genre_path(@movie, genre) %>
-      <%= link_to "down", vote_movie_genre_path(@movie, genre,  type: "down"), method: "post" %>
+  <div class="row clearfix">
+    <div class="col-md-4 column">
+      <%= image_tag @movie.movie_poster.url(:medium) %>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>
+                <strong>Title:</strong>
+                <%= @movie.title %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Year:</strong>
+                <%= @movie.year %>
+              </td>
+            </tr>          
+            <tr>
+              <td>
+                <strong>Rated:</strong>
+                <%= @movie.rated %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Duration:</strong>
+                <%= @movie.duration %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Synopsis:</strong>
+                <%= @movie.synopsis %>
+              </td>
+            </tr> 
+          </tbody>
+        </table>
     </div>
+  <div class="col-md-8 column">
+    <%= render 'movies/linker' %>
   </div>
-<% end %>
-<%= link_to "Add Genre", new_movie_genre_path(@movie) %>        
+</div>

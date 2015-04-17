@@ -21,3 +21,12 @@ require 'factory_girl_rails'
       expect(page).to have_content("Thanks for the vote")
     end
   end
+
+  describe "A non-user votes on a genre" do
+    it "and is prevented and presented with an alert" do
+      visit '/movies/1'
+      click_link 'up'
+
+      expect(page).to have_content("You need to sign in or sign up before continuing.")
+    end
+  end

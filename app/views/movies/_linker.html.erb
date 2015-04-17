@@ -1,0 +1,16 @@
+<table class="table">
+  <tbody>
+    <strong>Genres:</strong>
+    <tr>
+      <td>  
+        <% @genres.popular.each do |genre| %>
+          <%= pluralize genre.reputation_for(:votes).to_i, "vote" %>
+          <%= link_to "up", vote_movie_genre_path(@movie, genre, type: "up"), method: "post" %>
+          <%= link_to genre.title, movie_genre_path(@movie, genre) %>
+          <%= link_to "down", vote_movie_genre_path(@movie, genre, type: "down"), method: "post" %>
+        <% end %>
+          <%= link_to "Add Genre", new_movie_genre_path(@movie), class: 'btn btn-default' %>
+      </td>
+    </tr>         
+  </tbody>
+</table>

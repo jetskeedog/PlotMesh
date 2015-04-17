@@ -2,12 +2,14 @@ class GenresController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_genre, only: [:show, :edit, :update, :destroy]
   before_action :set_movie
+
   
   def index
-    @genres = Genre.all
+    @genres = Genre.popular
   end
   
   def show
+    @similar_genres = Genre.similar_genres(@genre)
   end
   
   def vote

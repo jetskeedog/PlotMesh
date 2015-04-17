@@ -10,6 +10,7 @@
  <div class="container-fluid">
       <div class="row clearfix">
         <div class="col-md-12 column">
+          
       <% flash.each do |name, msg| %>
       <%= content_tag(:div, msg, class: "alert alert-info") %>
       <% end %> 
@@ -19,6 +20,5 @@
       </div>
     </div>
   </div>
-
 </body>
 </html>

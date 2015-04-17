@@ -1,3 +1,14 @@
-<p><%= @movie.title %></p>
+<div class="row clearfix">
+  <div class="col-md-6 column">
+    <%= link_to (image_tag @movie.movie_poster.url(:medium)), @movie %>
+<p><%= link_to @movie.title, @movie %></p>
 <p><%= @genre.title %></p>
 <p><%= @genre.description %></p>
+    </div>
+    <div class="col-md-6 column">
+<strong>Checkout these other films in the <%= @genre.title %> genre </strong><br />
+<% @similar_genres.each do |genre| %>
+<p><%= link_to genre.movie.title, genre.movie %></p>
+<p><%= link_to (image_tag genre.movie.movie_poster.url(:thumb)), genre.movie %></p>
+<% end %>
+  </div>
