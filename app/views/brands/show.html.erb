@@ -1,0 +1,14 @@
+<div class="row clearfix">
+  <div class="col-md-6 column">
+    <%= link_to (image_tag @movie.movie_poster.url(:medium)), @movie %>
+    <p><%= link_to @movie.title, @movie %></p>
+    <p><%= @brand.title %></p>
+    <p><%= @brand.description %></p>
+  </div>
+<div class="col-md-6 column">
+  <strong>Checkout these other films in the <%= @brand.title %> brand </strong><br />
+  <% @similar_brands.each do |brand| %>
+  <p><%= link_to brand.movie.title, brand.movie %></p>
+  <p><%= link_to (image_tag brand.movie.movie_poster.url(:thumb)), brand.movie %></p>
+<% end %>
+</div>

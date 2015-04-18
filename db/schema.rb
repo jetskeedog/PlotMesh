@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417000222) do
+ActiveRecord::Schema.define(version: 20150417235947) do
 
   create_table "admins", force: true do |t|
     t.string   "username"
@@ -29,6 +29,43 @@ ActiveRecord::Schema.define(version: 20150417000222) do
     t.datetime "updated_at"
   end
 
+  create_table "brands", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "movie_id"
+    t.boolean  "fictional"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "brands", ["movie_id"], name: "index_brands_on_movie_id"
+  add_index "brands", ["user_id"], name: "index_brands_on_user_id"
+
+  create_table "commons", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "movie_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "commons", ["movie_id"], name: "index_commons_on_movie_id"
+  add_index "commons", ["user_id"], name: "index_commons_on_user_id"
+
+  create_table "easter_eggs", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "movie_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "easter_eggs", ["movie_id"], name: "index_easter_eggs_on_movie_id"
+  add_index "easter_eggs", ["user_id"], name: "index_easter_eggs_on_user_id"
+
   create_table "genres", force: true do |t|
     t.string   "title"
     t.text     "description"
@@ -40,6 +77,31 @@ ActiveRecord::Schema.define(version: 20150417000222) do
 
   add_index "genres", ["movie_id"], name: "index_genres_on_movie_id"
   add_index "genres", ["user_id"], name: "index_genres_on_user_id"
+
+  create_table "goofs", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "movie_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "goofs", ["movie_id"], name: "index_goofs_on_movie_id"
+  add_index "goofs", ["user_id"], name: "index_goofs_on_user_id"
+
+  create_table "locations", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "movie_id"
+    t.boolean  "fictional"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "locations", ["movie_id"], name: "index_locations_on_movie_id"
+  add_index "locations", ["user_id"], name: "index_locations_on_user_id"
 
   create_table "movies", force: true do |t|
     t.string   "title"
@@ -103,6 +165,45 @@ ActiveRecord::Schema.define(version: 20150417000222) do
   add_index "rs_reputations", ["reputation_name", "target_id", "target_type"], name: "index_rs_reputations_on_reputation_name_and_target", unique: true
   add_index "rs_reputations", ["reputation_name"], name: "index_rs_reputations_on_reputation_name"
   add_index "rs_reputations", ["target_id", "target_type"], name: "index_rs_reputations_on_target_id_and_target_type"
+
+  create_table "songs", force: true do |t|
+    t.string   "title"
+    t.string   "artist"
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "movie_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "songs", ["movie_id"], name: "index_songs_on_movie_id"
+  add_index "songs", ["user_id"], name: "index_songs_on_user_id"
+
+  create_table "technicals", force: true do |t|
+    t.string   "title"
+    t.string   "artist"
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "movie_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "technicals", ["movie_id"], name: "index_technicals_on_movie_id"
+  add_index "technicals", ["user_id"], name: "index_technicals_on_user_id"
+
+  create_table "themes", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "movie_id"
+    t.boolean  "spoiler"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "themes", ["movie_id"], name: "index_themes_on_movie_id"
+  add_index "themes", ["user_id"], name: "index_themes_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "username"

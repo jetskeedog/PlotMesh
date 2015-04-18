@@ -8,6 +8,15 @@ class MoviesController < ApplicationController
   
   def show
     @genres = Genre.where(movie_id: @movie.id)
+    @brands = Brand.where(movie_id: @movie.id)
+    @commons = Common.where(movie_id: @movie.id)
+    @easter_eggs = EasterEgg.where(movie_id: @movie.id)
+    @goofs = Goof.where(movie_id: @movie.id)
+    @locations = Location.where(movie_id: @movie.id)
+    @songs = Song.where(movie_id: @movie.id)
+    @technicals = Technical.where(movie_id: @movie.id)
+    @themes = Theme.where(movie_id: @movie.id)
+    
   end
   
   def new

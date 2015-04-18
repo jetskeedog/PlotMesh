@@ -1,0 +1,14 @@
+<div class="row clearfix">
+  <div class="col-md-6 column">
+    <%= link_to (image_tag @movie.movie_poster.url(:medium)), @movie %>
+    <p><%= link_to @movie.title, @movie %></p>
+    <p><%= @goof.title %></p>
+    <p><%= @goof.description %></p>
+  </div>
+<div class="col-md-6 column">
+  <strong>Checkout these other films in the <%= @goof.title %> goof </strong><br />
+  <% @similar_goofs.each do |goof| %>
+  <p><%= link_to goof.movie.title, goof.movie %></p>
+  <p><%= link_to (image_tag goof.movie.movie_poster.url(:thumb)), goof.movie %></p>
+<% end %>
+</div>

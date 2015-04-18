@@ -13,5 +13,49 @@ Movie.create(title: "One Flew Over the Cuckoo's Nest", year: "1975", rated: "R",
 Movie.create(title: "Se7en", year: "1995", rated: "R",  duration: "88 min", synopsis: "Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his modus operandi.", admin_id: 1, movie_poster: File.open('spec/images/se7en.jpg') )
 Movie.create(title: "American History X", year: "1998", rated: "R",  duration: "90 min", synopsis: "A former neo-nazi skinhead tries to prevent his younger brother from going down the same wrong path that he did.", admin_id: 1, movie_poster: File.open('spec/images/american.jpg') )
 Movie.create(title: "The Departed", year: "2006", rated: "R", duration: "80 min", synopsis: "An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.", admin_id: 1, movie_poster: File.open('spec/images/departed.jpg') )
+Movie.create(title: "The Exorcist", year: "1973", rated: "R", duration: "122 min", synopsis: "When a teenage girl is possessed by a mysterious entity, her mother seeks the help of two priests to save her daughter.", admin_id: 1, movie_poster: File.open('spec/images/theexorcist.jpg') )
+Movie.create(title: "Insidious", year: "2010", rated: "R", duration: "103 min", synopsis: "A family looks to prevent evil spirits from trapping their comatose child in a realm called The Further.", admin_id: 1, movie_poster: File.open('spec/images/insidious.jpg') )
+Movie.create(title: "The Ring", year: "2002", rated: "R", duration: "115 min", synopsis: "A journalist must investigate a mysterious videotape which seems to cause the death of anyone in a week of viewing it.", admin_id: 1, movie_poster: File.open('spec/images/thering.jpg') )
+Movie.create(title: "The Haunting in Connecticut", year: "2009", rated: "R", duration: "92 min", synopsis: "After a family is forced to relocate for their son's health, they begin experiencing supernatural behavior in their new home, and uncover a sinister history.", admin_id: 1, movie_poster: File.open('spec/images/thehaunting.jpg') )
+Movie.create(title: "Carrie", year: "1976", rated: "R", duration: "98 min", synopsis: "A young, abused and timid 17-year-old girl discovers she has telekinesis, and gets pushed to the limit on the night of her school's prom by a humiliating prank.", admin_id: 1, movie_poster: File.open('spec/images/carrie.jpg') )
+Movie.create(title: "Test", year: "1976", rated: "R", duration: "98 min", synopsis: "A young, abused and timid 17-year-old girl discovers she has telekinesis, and gets pushed to the limit on the night of her school's prom by a humiliating prank.", admin_id: 1, movie_poster: File.open('spec/images/test.jpg') )
 Genre.create(title: "Horror", description: "text here", user_id: 1, movie_id: 1)
 Genre.create(title: "Supernatural", description: "Ghosts and stuff", user_id: 1, movie_id: 1)
+Genre.create(title: "Supernatural", description: "Ghosts and stuff", user_id: 1, movie_id: 17)
+Genre.create(title: "Supernatural", description: "Ghosts and stuff", user_id: 1, movie_id: 16)
+Genre.create(title: "Supernatural", description: "Ghosts and stuff", user_id: 1, movie_id: 18)
+Genre.create(title: "Supernatural", description: "Ghosts and stuff", user_id: 1, movie_id: 19)
+Genre.create(title: "Supernatural", description: "Ghosts and stuff", user_id: 1, movie_id: 20)
+Theme.create(title: "Ghosts", user_id: 1, movie_id: 1)
+Theme.create(title: "Suburbia", user_id: 1, movie_id: 1)
+Theme.create(title: "Haunted House", user_id: 1, movie_id: 1)
+Theme.create(title: "Paranormal", user_id: 1, movie_id: 1)   
+Theme.create(title: "Psychic Medium", user_id: 1, movie_id: 1)
+Theme.create(title: "Skeletons ", user_id: 1, description: "**SPOILER** There are about a half a dozen skeltetons that appear at the end from under the pool.", movie_id: 1)
+Theme.create(title: "Indian Burial Grounds", user_id: 1, movie_id: 1)
+Theme.create(title: "Swimming Pool", user_id: 1, movie_id: 1)
+Theme.create(title: "Paranormal Investigation", user_id: 1, movie_id: 1)
+Brand.create(title: "Coke", user_id: 1, movie_id: 1)
+Brand.create(title: "Ford", user_id: 1, movie_id: 1)
+Brand.create(title: "RCA", user_id: 1, movie_id: 1)
+Location.create(title: "Agoura Hills, CA", movie_id: 1)
+Location.create(title: "Holiday Inn", movie_id: 1)
+EasterEgg.create(title: "ET", movie_id: 1)
+5.times do Genre.create(title: "Testing Testing", description: "Test", user_id: 1, movie_id: 21)
+end
+15.times do Theme.create(title: "Testing Testing", description: "Test", user_id: 1, movie_id: 21)
+end
+15.times do Brand.create(title: "Testing Testing", description: "Test", user_id: 1, movie_id: 21)
+end
+4.times do Common.create(title: "Testing Testing", description: "Test", user_id: 1, movie_id: 21)
+end
+6.times do EasterEgg.create(title: "Testing Testing", description: "Test", user_id: 1, movie_id: 21)
+end
+4.times do Goof.create(title: "Testing Testing", description: "Test", user_id: 1, movie_id: 21)
+end
+3.times do Location.create(title: "Testing Testing", description: "Test", user_id: 1, movie_id: 21)
+end
+7.times do Song.create(title: "Testing Testing", artist: "Tester", description: "Test", user_id: 1, movie_id: 21)
+end
+5.times do Technical.create(title: "Testing Testing", artist: "Tester", description: "Test", user_id: 1, movie_id: 21)
+end

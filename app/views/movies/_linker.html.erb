@@ -1,16 +1,149 @@
 <table class="table">
   <tbody>
-    <strong>Genres:</strong>
     <tr>
       <td>  
-        <% @genres.popular.each do |genre| %>
+        <strong>Genres:</strong>
+          <% @genres.popular.each do |genre| %>
+          <button type="button" class="btn btn-default">
+          <span class="badge">
           <%= pluralize genre.reputation_for(:votes).to_i, "vote" %>
+          </span>
           <%= link_to "up", vote_movie_genre_path(@movie, genre, type: "up"), method: "post" %>
-          <%= link_to genre.title, movie_genre_path(@movie, genre) %>
+           <strong><%= link_to genre.title, movie_genre_path(@movie, genre) %></strong>
           <%= link_to "down", vote_movie_genre_path(@movie, genre, type: "down"), method: "post" %>
-        <% end %>
+          <% end %>
+          </button>
           <%= link_to "Add Genre", new_movie_genre_path(@movie), class: 'btn btn-default' %>
       </td>
-    </tr>         
+    </tr>
+    <tr>
+      <td>  
+        <strong>Themes:</strong>
+        <% @themes.popular.each do |theme| %>
+          <button type="button" class="btn btn-default">
+          <span class="badge">
+          <%= pluralize theme.reputation_for(:votes).to_i, "vote" %>
+          </span>
+          <%= link_to "up", vote_movie_theme_path(@movie, theme, type: "up"), method: "post" %>
+          <strong><%= link_to theme.title, movie_theme_path(@movie, theme) %></strong>
+          <%= link_to "down", vote_movie_theme_path(@movie, theme, type: "down"), method: "post" %>
+        <% end %>
+          </button>
+          <%= link_to "Add Theme", new_movie_theme_path(@movie), class: 'btn btn-default' %>
+      </td>
+    </tr>
+    <tr>
+      <td>  
+        <strong>Locations:</strong>
+        <% @locations.popular.each do |location| %>
+          <button type="button" class="btn btn-default">
+          <span class="badge">
+          <%= pluralize location.reputation_for(:votes).to_i, "vote" %>
+          </span>
+          <%= link_to "up", vote_movie_location_path(@movie, location, type: "up"), method: "post" %>
+          <strong><%= link_to location.title, movie_location_path(@movie, location) %></strong>
+          <%= link_to "down", vote_movie_location_path(@movie, location, type: "down"), method: "post" %>
+        <% end %>
+          </button>
+          <%= link_to "Add Location", new_movie_location_path(@movie), class: 'btn btn-default' %>
+      </td>
+    </tr>
+    <tr>
+      <td>  
+        <strong>Easter Eggs:</strong>
+        <% @easter_eggs.popular.each do |easter| %>
+          <button type="button" class="btn btn-default">
+          <span class="badge">
+            <%= pluralize easter.reputation_for(:votes).to_i, "vote" %>
+          </span>
+            <%= link_to "up", vote_movie_easter_egg_path(@movie, easter, type: "up"), method: "post" %>
+            <strong><%= link_to easter.title, movie_easter_egg_path(@movie, easter) %></strong>
+            <%= link_to "down", vote_movie_easter_egg_path(@movie, easter, type: "down"), method: "post" %>
+          <% end %>
+          </button>
+        <%= link_to "Add Easter Egg", new_movie_easter_egg_path(@movie), class: 'btn btn-default' %>
+      </td>
+    </tr>
+    <tr>
+      <td>  
+        <strong>Goofs:</strong>
+        <% @goofs.popular.each do |goof| %>
+          <button type="button" class="btn btn-default">
+          <span class="badge">
+          <%= pluralize goof.reputation_for(:votes).to_i, "vote" %>
+            </span>
+          <%= link_to "up", vote_movie_goof_path(@movie, goof, type: "up"), method: "post" %>
+          <strong><%= link_to goof.title, movie_goof_path(@movie, goof) %></strong>
+          <%= link_to "down", vote_movie_goof_path(@movie, goof, type: "down"), method: "post" %>
+        <% end %>
+        </button>
+          <%= link_to "Add Goof", new_movie_goof_path(@movie), class: 'btn btn-default' %>
+      </td>
+    </tr>
+    <tr>
+      <td>  
+        <strong>Songs:</strong>
+        <% @songs.popular.each do |song| %>
+          <button type="button" class="btn btn-default">
+          <span class="badge">
+          <%= pluralize song.reputation_for(:votes).to_i, "vote" %>
+            </span>
+          <%= link_to "up", vote_movie_song_path(@movie, song, type: "up"), method: "post" %>
+            <strong><%= link_to song.title, movie_song_path(@movie, song) %></strong>
+          <%= link_to "down", vote_movie_song_path(@movie, song, type: "down"), method: "post" %>
+        <% end %>
+                </button>
+          <%= link_to "Add Song", new_movie_song_path(@movie), class: 'btn btn-default' %>
+    
+      </td>
+    </tr>
+    <tr>
+      <td>  
+        <strong>Brand:</strong>
+        <% @brands.popular.each do |brand| %>
+          <button type="button" class="btn btn-default">
+          <span class="badge">
+          <%= pluralize brand.reputation_for(:votes).to_i, "vote" %>
+          </span>
+          <%= link_to "up", vote_movie_brand_path(@movie, brand, type: "up"), method: "post" %>
+          <strong><%= link_to brand.title, movie_brand_path(@movie, brand) %></strong>
+          <%= link_to "down", vote_movie_brand_path(@movie, brand, type: "down"), method: "post" %>
+        <% end %>
+          </button>
+          <%= link_to "Add Brand", new_movie_brand_path(@movie), class: 'btn btn-default' %>
+      </td>
+    </tr>    
+    <tr>
+      <td>  
+        <strong>Technical:</strong>
+        <% @technicals.popular.each do |technical| %>
+          <button type="button" class="btn btn-default">
+          <span class="badge">
+          <%= pluralize technical.reputation_for(:votes).to_i, "vote" %>
+          </span>
+          <%= link_to "up", vote_movie_technical_path(@movie, technical, type: "up"), method: "post" %>
+          <strong><%= link_to technical.title, movie_technical_path(@movie, technical) %></strong>
+          <%= link_to "down", vote_movie_technical_path(@movie, technical, type: "down"), method: "post" %>
+        <% end %>
+          </button>
+          <%= link_to "Add Technical", new_movie_technical_path(@movie), class: 'btn btn-default' %>
+      </td>
+    </tr>
+    <tr>
+      <td>  
+        <strong>Cliches:</strong>
+        <% @commons.popular.each do |common| %>
+          <button type="button" class="btn btn-default">
+          <span class="badge">
+          <%= pluralize common.reputation_for(:votes).to_i, "vote" %>
+          </span>
+          <%= link_to "up", vote_movie_common_path(@movie, common, type: "up"), method: "post" %>
+          <strong><%= link_to common.title, movie_common_path(@movie, common) %></strong>
+          <%= link_to "down", vote_movie_common_path(@movie, common, type: "down"), method: "post" %>
+        <% end %>
+          </button>
+          <%= link_to "Add Cliche", new_movie_common_path(@movie), class: 'btn btn-default' %>
+      </td>
+    </tr>    
   </tbody>
 </table>

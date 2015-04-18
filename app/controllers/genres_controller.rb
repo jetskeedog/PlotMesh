@@ -28,7 +28,7 @@ class GenresController < ApplicationController
     @genre = @movie.genres.create(genre_params)
     @genre.user_id = current_user.id
     if @genre.save
-      flash[:success] = "Genre was added!"
+      flash[:success] = "The #{@genre.title} genre was added to #{@movie.title}!"
       redirect_to @movie
     else
       render 'new'
