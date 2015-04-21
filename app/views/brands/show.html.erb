@@ -6,7 +6,7 @@
     <p><%= @brand.description %></p>
   </div>
 <div class="col-md-6 column">
-  <strong>Checkout these other films in the <%= @brand.title %> brand </strong><br />
+  <strong>Checkout these other films that feature the <%= @brand.title %> brand </strong><br />
   <% @similar_brands.each do |brand| %>
   <p><%= link_to brand.movie.title, brand.movie %></p>
   <p><%= link_to (image_tag brand.movie.movie_poster.url(:thumb)), brand.movie %></p>

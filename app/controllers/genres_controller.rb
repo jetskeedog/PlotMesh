@@ -3,11 +3,11 @@ class GenresController < ApplicationController
   before_action :set_genre, only: [:show, :edit, :update, :destroy]
   before_action :set_movie
 
-  
+
   def index
     @genres = Genre.popular
   end
-  
+
   def show
     @similar_genres = Genre.similar_genres(@genre)
   end
@@ -50,4 +50,3 @@ class GenresController < ApplicationController
   end
 
 end
-

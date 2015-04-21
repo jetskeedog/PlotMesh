@@ -50,5 +50,3 @@ class ThemesController < ApplicationController
   end
 
 end
-
-

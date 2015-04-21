@@ -1,0 +1,110 @@
+<h1>Search Results</h1>
+<%= form_tag search_path, method: :get do |f| %>
+<%= text_field_tag :q, params[:q] %>
+<%= submit_tag "Go", name: nil %>
+<br />
+<% end %>
+<div class="container">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+    <h3>Results for Movies:</h3>
+    <% @movies.each do |movie| %>
+      <p><%= link_to movie.title, movie %></p>
+    <h3>Results in Genres:</h3>
+      <% @genres.each do |genre| %>
+        <div class='box panel panel-default'>
+          <p><%= link_to Movie.find(genre.movie_id).title, movie_path(genre.movie_id) %></p>
+          <%= link_to (image_tag Movie.find(genre.movie_id).movie_poster.url(:thumb)), movie %>
+        </div>
+    <% end %>
+  </div>
+</div>
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <h3>Results in Themes:</h3>
+      <% @themes.each do |theme| %>
+        <div class='box panel panel-default'>
+          <p><%= link_to Movie.find(theme.movie_id).title, movie_path(theme.movie_id) %></p>
+          <%= link_to (image_tag Movie.find(theme.movie_id).movie_poster.url(:thumb)), movie %>
+        </div>
+    <% end %>
+  </div>
+</div>
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+    <h3>Results in Technicals:</h3>
+      <% @technicals.each do |technical| %>
+        <div class='box panel panel-default'>
+          <p><%= link_to Movie.find(technical.movie_id).title, movie_path(technical.movie_id) %></p>
+          <%= link_to (image_tag Movie.find(technical.movie_id).movie_poster.url(:thumb)), movie %>
+        </div>
+    <% end %>
+  </div>
+</div>
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <h3>Results in Brands:</h3>
+      <% @brands.each do |brand| %>
+        <div class='box panel panel-default'>
+          <p><%= link_to Movie.find(brand.movie_id).title, movie_path(brand.movie_id) %></p>
+          <%= link_to (image_tag Movie.find(brand.movie_id).movie_poster.url(:thumb)), movie %>
+        </div>
+    <% end %>
+  </div>
+</div>
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+    <h3>Results in Cliches:</h3>
+      <% @commons.each do |common| %>
+        <div class='box panel panel-default'>
+          <p><%= link_to Movie.find(common.movie_id).title, movie_path(common.movie_id) %></p>
+          <%= link_to (image_tag Movie.find(common.movie_id).movie_poster.url(:thumb)), movie %>
+        </div>
+    <% end %>
+  </div>
+</div> 
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <h3>Results in Easter Eggs:</h3>
+      <% @easter_eggs.each do |easter| %>
+        <div class='box panel panel-default'>
+          <p><%= link_to Movie.find(easter.movie_id).title, movie_path(easter.movie_id) %></p>
+          <%= link_to (image_tag Movie.find(easter.movie_id).movie_poster.url(:thumb)), movie %>
+        </div>
+    <% end %>
+  </div>
+</div>
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+    <h3>Results in Goofs:</h3>
+      <% @goofs.each do |goof| %>
+        <div class='box panel panel-default'>
+          <p><%= link_to Movie.find(goof.movie_id).title, movie_path(goof.movie_id) %></p>
+          <%= link_to (image_tag Movie.find(goof.movie_id).movie_poster.url(:thumb)), movie %>
+        </div>
+    <% end %>
+  </div>
+</div>
+    <div class="row clearfix">
+    <div class="col-md-12 column">
+      <h3>Results in Locations:</h3>
+      <% @locations.each do |location| %>
+        <div class='box panel panel-default'>
+          <p><%= link_to Movie.find(location.movie_id).title, movie_path(location.movie_id) %></p>
+          <%= link_to (image_tag Movie.find(location.movie_id).movie_poster.url(:thumb)), movie %>
+        </div>
+    <% end %>
+  </div>
+</div>
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+    <h3>Results in Songs:</h3>
+      <% @songs.each do |song| %>
+        <div class='box panel panel-default'>
+          <p><%= link_to Movie.find(song.movie_id).title, movie_path(song.movie_id) %></p>
+          <%= link_to (image_tag Movie.find(song.movie_id).movie_poster.url(:thumb)), movie %>
+        </div>
+    <% end %>
+  </div>
+</div>    
+  <% end %> 

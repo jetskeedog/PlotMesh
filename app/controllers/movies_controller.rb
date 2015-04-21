@@ -3,11 +3,17 @@ class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
 
   def index
+#    if params[:query].present?
+ #     @movies = Movie.search(params)
+#    else
     @movies = Movie.all
+#    end
   end
+
   
   def show
     @genres = Genre.where(movie_id: @movie.id)
+    @themes = Theme.where(movie_id: @movie.id)
     @brands = Brand.where(movie_id: @movie.id)
     @commons = Common.where(movie_id: @movie.id)
     @easter_eggs = EasterEgg.where(movie_id: @movie.id)
@@ -15,8 +21,8 @@ class MoviesController < ApplicationController
     @locations = Location.where(movie_id: @movie.id)
     @songs = Song.where(movie_id: @movie.id)
     @technicals = Technical.where(movie_id: @movie.id)
-    @themes = Theme.where(movie_id: @movie.id)
-    
+
+    @movies = Movie.where(movie_id: @movie.id)
   end
   
   def new

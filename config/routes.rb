@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :genres do
       member { post :vote }
     end
+      resources :themes do
+        member { post :vote }
+    end
       resources :brands do
         member { post :vote }
     end
@@ -25,13 +28,11 @@ Rails.application.routes.draw do
       resources :technicals do
         member { post :vote }
     end
-      resources :themes do
-        member { post :vote }
-    end
       resources :goofs do
         member { post :vote }
     end
   end
- 
+  get 'search', to: 'search#search'
+#  resources :search #:search, :as => :searches
   root "movies#index"
 end
