@@ -1,5 +1,8 @@
-<p><%= image_tag @movie.movie_poster.url(:medium) %></p>
-
+<div class="container-fluid">
+  <div class="col-md-4">
+  <p><%= image_tag @movie.movie_poster.url(:medium) %></p>
+  </div>
+  <div class="col-md-8">
 <strong>Title:</strong>
 <%= @movie.title %>
 </p>
@@ -20,3 +23,5 @@
   <strong>Synopsis:</strong>
   <%= @movie.synopsis %>
 </p>
+</div>
+</div>
